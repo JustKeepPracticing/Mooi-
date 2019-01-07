@@ -1,0 +1,112 @@
+// about section start
+
+.about
+  +grid
+  grid-template-areas: "content aboutImg" "designImgBlock designTextBlock"
+  grid-template-columns: repeat(2, 1fr)
+  @media #{$tablet}
+    grid-template-areas: "content content" "aboutImg aboutImg" "designTextBlock designTextBlock" "designImgBlock designImgBlock"
+    grid-template-columns: 1fr
+
+// about content wrapper start
+
+.about__content-wrapper
+  grid-area: content
+  color: $clr-primary-dark
+  padding: 3rem
+  position: relative
+  @media #{$ipad}
+    padding: 3rem 2rem 2rem 2rem
+  @media #{$mobileXs}
+    padding: 3rem 2rem 2rem 2rem
+
+.section-description
+  +line-height(28px)
+  margin-top: 3.75rem
+
+.md-heading
+  text-transform: uppercase
+  font-size: $font-size-base
+
+.lg-heading
+  @extend %lg-heading
+
+// about content wrapper end
+
+// about bg img start
+
+.about__image-wrapper
+  grid-area: aboutImg
+  background-image: url("../img/about-img-wrapper.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  width: 100%
+  height: 100%
+  @media #{$tablet}
+    background-position: bottom center
+    height: 28rem
+
+// about bg img end
+
+// about design part start
+
+.about__design--img-with-text
+  grid-area: designImgBlock
+  +flexbox
+  flex-wrap: wrap
+  img
+    width: 100%
+    height: 20.18rem
+    object-fit: fill
+  > div
+    flex: 1 50%
+    height: 20.18rem
+    @media only screen and (max-width: 767px) and (min-width: 320px)
+      flex: 1 100%
+  @media only screen and (max-width: 767px) and (min-width: 320px)
+    div:nth-child(3)
+      order: 4
+    div:nth-child(4)
+      order: 3
+
+// about design main text start
+
+.about__design--textBlock
+  grid-area: designTextBlock
+  padding: 3rem 3rem 2rem 3rem
+  position: relative
+  .lg-heading
+    @extend %lg-heading
+    + p
+      margin-top: 3.75rem
+      +line-height(28px)
+  @media #{$ipad}
+    padding: 3rem 2rem 2rem 2rem
+  @media #{$mobileXs}
+    padding: 3rem 2rem 2rem 2rem
+
+// about design main text end
+
+// about design text block start
+
+.about__text-block
+  background-color: $clr-primary-dark
+  color: $clr-primary-light
+  padding: 0 1.93rem 0 1.93rem
+  +flexbox
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  p
+    +line-height(28px)
+    font-size: $font-size-base
+    font-family: $roboto-light
+  h5
+    margin-bottom: 2rem
+
+// about design text block end
+
+// about design part end
+
+// about section end

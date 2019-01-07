@@ -1,0 +1,67 @@
+// overriding browsers' default styles
+
+*
+  box-sizing: inherit
+
+body
+  box-sizing: border-box
+
+p, h1, h2, h3, h4, h5, ul
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+
+ul
+  list-style: none
+
+// custom styles start
+
+h3
+  font-size: $font-size-base
+  font-family: $roboto-reg
+  +letter-space(.04em)
+
+p
+  +letter-space(.04em)
+  @media #{$ipad}
+    letter-spacing: normal
+
+h5
+  font-size: $font-size-s
+  font-family: $roboto-reg
+  +letter-space(1px)
+
+// custom styles end
+
+// custom classes start
+
+.text-center
+  text-align: center
+
+.text-left
+  text-align: left
+
+.text-capitalize
+  text-transform: capitalize
+
+.text-uppercase
+  text-transform: uppercase
+
+.text-capitalize--fl:first-letter
+  text-transform: uppercase
+
+.fade-30
+  opacity: .3
+
+.fullHeight
+  height: 100%
+
+.p-fixed
+  position: fixed
+
+.hidden
+  visibility: hidden
+
+// custom classes end

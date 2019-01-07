@@ -1,0 +1,65 @@
+// contact form start
+
+.contact__form
+  margin-top: 4.8125rem
+  > div
+    position: relative
+    &:not(.contact__form--msg-input)
+      margin-bottom: 3.3125rem
+    > input
+      position: relative
+      border: none
+      width: 100%
+      border-bottom: 1px solid $clr-primary-dark
+      &:focus
+        outline: none
+    > label
+      position: absolute
+      left: 0
+      top: 0
+      font-size: $font-size-xs
+      font-family: $roboto-light
+      font-style: italic
+      pointer-events: none
+      +transition(all .2s linear)
+  &--msg-input
+    position: relative
+    textarea
+      position: relative
+      width: 100%
+      border: none
+      border-bottom: 1px solid $clr-primary-dark
+      resize: none
+      &:focus
+        outline: none
+
+.contact__form
+  &--mail-input,
+  &--name-input,
+  &--msg-input
+    input
+      &:focus
+        + label
+          top: -1.0625rem
+          font-size: $font-size-xxs
+          @extend %fade-60
+
+.contact__form--msg-input
+  textarea
+    &:focus
+      + label
+        top: -1.0625rem
+        font-size: $font-size-xxs
+        @extend %fade-60
+
+.contact__form
+  &--mail-input,
+  &--name-input,
+  &--msg-input
+    .is-focused
+      + label
+        top: -1.0625rem
+        font-size: $font-size-xxs
+        @extend %fade-60
+
+// contact form end

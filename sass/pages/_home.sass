@@ -1,0 +1,116 @@
+// main section start
+
+.main
+  height: calc(100% - 4.75rem)
+
+// main section end
+
+// home section start
+
+.home
+  +grid
+  grid-template-areas: "hero"
+  @media #{$tablet}
+    grid-template-areas: "hero"
+
+// home bg img start
+
+.home__hero-wrapper
+  background-image: url("../img/home-bg.jpg")
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  background-size: cover
+  width: 100%
+  height: 100vh
+  position: relative
+  grid-area: hero
+  &:after
+    position: absolute
+    content: ''
+    width: 100%
+    height: 100vh
+    top: 0
+    left: 0
+    background-color: rgba(0, 0, 0, .6)
+    z-index: 1
+  h4
+    color: $clr-primary-light
+    z-index: 2
+    position: relative
+    font-family: $roboto-reg
+    font-weight: 400
+    margin-bottom: 2rem
+
+// home bg img end
+
+// countdown start
+
+.home__countdown
+  position: relative
+  z-index: 2
+  .timer
+    span
+      color: $clr-primary-light
+      font-family: $roboto-light
+      font-style: italic
+      +letter-space(.04em)
+      @media only screen and (max-width: 360px) and (min-width: 320px)
+        font-size: .9rem
+      &:first-of-type
+        font-size: $font-size-l
+        font-family: $merienda-bold
+        margin-bottom: .8rem
+        @media #{$mobileXs}
+          font-size: $font-size-s
+
+.home__countdown-wrapper
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 2
+  .timer
+    +flexbox
+    justify-content: center
+    align-items: center
+    > div
+      flex-direction: column
+      +flexbox
+      justify-content: center
+      align-items: center
+      margin: 0 1rem 0 1rem
+
+// countdown end
+
+// explore block start
+
+.home__explore-block
+  z-index: 2
+  position: relative
+  +flexbox
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  top: 85%
+  +transform(translateY(-85%))
+  a
+    color: $clr-primary-light
+
+// animated angles start
+
+.home__animated-angles
+  animation: moveDown 1s ease-in infinite
+
+@keyframes moveDown
+  0%
+    +transform(translateY(-1rem))
+    opacity: 0
+  100%
+    +transform(translateY(1rem))
+    opacity: 1
+// animated angles end
+
+// explore block end
+
+// home section end

@@ -1,0 +1,75 @@
+// mobile menu close button start
+
+.nav-btn--close
+  float: right
+  +transition(all .2s ease-in-out)
+  span
+    position: relative
+    width: 1.93rem
+    height: .37rem
+    background-color: $clr-primary-dark
+    display: block
+    +border-radius(5px)
+    &:nth-child(1)
+      +transform(rotate(45deg))
+      transform-origin: 5px 3px
+    &:nth-child(2)
+      +transform(rotate(-45deg))
+      transform-origin: .93rem .43rem
+
+// mobile menu close button end
+
+// home explore button start
+
+.home__explore-btn
+  position: relative
+  color: $clr-primary-light
+  margin-bottom: 1rem
+  font-size: 1.2rem
+
+// home explore button end
+
+// home explore button animated angles start
+
+.home__animated-angles
+  font-size: 1.5rem
+
+// home explore button animated angles end
+
+// contact form button start
+
+.contact__form__btn
+  float: right
+  height: 2.6875rem
+  width: 9.375rem
+  background: transparent
+  text-transform: uppercase
+  font-size: $font-size-xs
+  font-family: $roboto-reg
+  border: 1px solid $clr-primary-dark
+  +box-shadow(0 1px 3px rgba(0, 0, 0, .2))
+  margin-top: 4.25rem
+  +transition(all .5s linear)
+  .animated-icon
+    margin-left: 15px
+  &:hover
+    background-color: $clr-primary-dark
+    color: $clr-primary-light
+    cursor: pointer
+    padding-left: 2.125rem
+    .animated-icon
+      animation: fly 2s
+      color: $clr-primary-light
+  &:focus
+    outline: none
+
+// animation for contact form button
+
+@keyframes fly
+  0%
+    opacity: .7
+  100%
+    opacity: 1
+    +transform(translate(5rem, -3.125rem))
+
+// contact form button end

@@ -1,0 +1,40 @@
+// contact section start
+
+.contact
+  +grid
+  grid-template-areas: "image form"
+  grid-template-columns: repeat(2, 1fr)
+  @media #{$tablet}
+    grid-template-areas: "image image" "form form"
+    grid-template-rows: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr)
+
+// contact section end
+
+// contact section bg img start
+
+.contact__img-wrapper
+  grid-area: image
+  position: relative
+  background-image: url(../img/contact-img.jpg)
+  background-repeat: no-repeat
+  background-position: bottom
+  background-size: cover
+  width: 100%
+  img
+    position: relative
+    width: 100%
+    height: 100%
+
+// contact section bg img end
+
+// contact section contact form start
+
+.contact__form--wrapper
+  grid-area: form
+  margin: auto
+  padding: 3rem
+  @media only screen and (max-width: 375px) and (min-width: 320px)
+    padding: 2rem 0
+
+// contact section contact form end
